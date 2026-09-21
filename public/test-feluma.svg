@@ -1,0 +1,59 @@
+<svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Blue Emblem Badge -->
+  <rect width="100" height="120" rx="3" fill="#164194" />
+
+  <!-- Inner Crisp White Square -->
+  <rect x="10" y="8" width="80" height="80" fill="#ffffff" />
+
+  <!-- Content Inside White Square -->
+  <g clip-path="url(#square-bounds)">
+    <defs>
+      <clipPath id="square-bounds">
+        <rect x="10" y="8" width="80" height="80" />
+      </clipPath>
+      <clipPath id="pillar-bounds">
+        <polygon points="46,8 66,8 44,88 24,88" />
+      </clipPath>
+    </defs>
+
+    <!-- Diagonal Blue Pillar -->
+    <polygon points="46,8 66,8 44,88 24,88" fill="#164194" />
+
+    <!-- Continuous Ribbon Curve (Helical Rod of Asclepius) -->
+    <!-- 1) Blue Ribbon on the White Background -->
+    <path
+      d="M 33 26 C 33 13, 44 11, 54 15 C 64 19, 76 24, 76 35 C 76 46, 64 49, 53 53 C 41 57, 22 59, 22 69 C 22 79, 36 81, 46 84 C 55 87, 62 85, 64 81"
+      stroke="#164194"
+      stroke-width="4.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+
+    <!-- 2) White Ribbon on the Blue Pillar (Clipped strictly to Pillar) -->
+    <g clip-path="url(#pillar-bounds)">
+      <path
+        d="M 33 26 C 33 13, 44 11, 54 15 C 64 19, 76 24, 76 35 C 76 46, 64 49, 53 53 C 41 57, 22 59, 22 69 C 22 79, 36 81, 46 84 C 55 87, 62 85, 64 81"
+        stroke="#ffffff"
+        stroke-width="4.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
+    </g>
+  </g>
+
+  <!-- Word FELUMA in Crisp White Geometric Bold Typography -->
+  <text
+    x="50"
+    y="108"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-size="16"
+    font-weight="900"
+    letter-spacing="1.2"
+    font-family="Montserrat, Arial Black, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+  >
+    FELUMA
+  </text>
+</svg>

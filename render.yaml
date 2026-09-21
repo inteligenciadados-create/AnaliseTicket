@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sih-sus-comparator
+    runtime: docker
+    plan: free
+    region: ohio
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /api/health

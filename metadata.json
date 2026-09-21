@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Ferramenta de Suporte a Análise do Ticket Médio",
+  "description": "Análise Inteligente e Auditoria de Ticket Médio do Faturamento SUS para o Hospital Universitário Ciências Médicas (HUCM) em Belo Horizonte.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

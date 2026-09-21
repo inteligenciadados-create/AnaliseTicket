@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-feluma-blue: #164194;
+  --color-feluma-blue-hover: #0f306e;
+  --color-feluma-blue-dark: #0b224e;
+  --color-feluma-blue-light: #eef3fb;
+  --color-feluma-gold: #e5a93c;
+  --color-feluma-gold-light: #fef8ee;
+  --color-feluma-gold-hover: #d99b26;
+  --color-feluma-navy: #0f2244;
+
+  /* Aliases for institutional theme compatibility */
+  --color-hucm-teal: #164194;
+  --color-hucm-teal-hover: #0f306e;
+  --color-hucm-teal-light: #eef3fb;
+  --color-hucm-gold: #e5a93c;
+  --color-hucm-gold-light: #fef8ee;
+  --color-hucm-gold-hover: #d99b26;
+  --color-hucm-navy: #0b224e;
+}
+
