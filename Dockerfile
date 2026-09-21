@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # 2. Instala dependências completas para o build
-RUN npm ci
+RUN npm install
 
 # 3. Copia o código-fonte da aplicação (incluindo a pasta /data com o SQLite pré-carregado)
 COPY . .
