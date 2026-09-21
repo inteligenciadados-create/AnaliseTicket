@@ -6,3 +6,11 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Ignora artefatos de banco pesados (>100MB) para não travar o push no GitHub.
+# O SQLite e os índices são gerados automaticamente no build a partir dos slots .gz
+data/*.sqlite*
+data/*.compact.json
+data/*.csv
+!data/*.compact.json.gz
+!data/fixed_metadata.json

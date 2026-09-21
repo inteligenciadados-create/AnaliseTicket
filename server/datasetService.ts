@@ -1222,10 +1222,13 @@ export function deleteSlotDataset(slotIndex: number): boolean {
 export function getFixedDataset(): { exists: boolean; metadata?: DatasetMetadata; data?: any[] } {
   ensureDataDir();
   const compactJson = path.join(DATA_DIR, "fixed_database.compact.json");
+  const compactGz = path.join(DATA_DIR, "fixed_database.compact.json.gz");
   const slot0Compact = getSlotCompactJsonPath(0);
+  const slot0CompactGz = getSlotCompactGzPath(0);
   const targetCompact = fs.existsSync(compactJson) ? compactJson : (fs.existsSync(slot0Compact) ? slot0Compact : null);
+  const targetCompactGz = fs.existsSync(compactGz) ? compactGz : (fs.existsSync(slot0CompactGz) ? slot0CompactGz : null);
 
-  if (!fs.existsSync(DATA_FILE) && !fs.existsSync(GZ_FILE) && !targetCompact) {
+  if (!fs.existsSync(DATA_FILE) && !fs.existsSync(GZ_FILE) && !targetCompact && !targetCompactGz) {
     return { exists: false };
   }
 
@@ -1237,8 +1240,10 @@ export function getFixedDataset(): { exists: boolean; metadata?: DatasetMetadata
       } catch {}
     }
 
-    if (targetCompact) {
-      const rawContent = fs.readFileSync(targetCompact, "utf-8");
+    if (targetCompact || targetCompactGz) {
+      const rawContent = targetCompact
+        ? fs.readFileSync(targetCompact, "utf-8")
+        : zlib.gunzipSync(fs.readFileSync(targetCompactGz!)).toString("utf-8");
       const parsed = JSON.parse(rawContent);
       if (parsed.cols && Array.isArray(parsed.rows)) {
         const cols: string[] = parsed.cols;
